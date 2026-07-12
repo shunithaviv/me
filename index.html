@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shunit Haviv</title>
-  <meta name="description" content="Shunit Haviv — personal site and links." />
+  <title>Shunit Haviv Hakimi</title>
+  <meta name="description" content="Shunit Haviv Hakimi — personal site and links." />
   <style>
     :root {
       --bg: #fafaf9;
@@ -71,6 +71,29 @@
       border-color: var(--accent);
       transform: translateY(-1px);
     }
+    .fun {
+      margin-top: 2.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--card);
+    }
+    .fun p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .fun a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .fun video {
+      display: block;
+      width: 100%;
+      max-width: 22rem;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+    }
     footer {
       margin-top: 2.5rem;
       font-size: 0.8rem;
@@ -80,16 +103,21 @@
 </head>
 <body>
   <main>
-    <h1>Shunit Haviv</h1>
+    <h1>Shunit Haviv Hakimi</h1>
     <p class="tagline">Personal site — more coming soon.</p>
 
     <nav class="links">
       <a class="link" href="https://github.com/shunithaviv">GitHub</a>
-      <a class="link" href="https://www.linkedin.com/in/shunithaviv/">LinkedIn</a>
-      <a class="link" href="mailto:shunithaviv@gmail.com">Email</a>
+      <a class="link" href="https://www.linkedin.com/in/shunit-haviv/">LinkedIn</a>
     </nav>
 
-    <footer>© <span id="year"></span> Shunit Haviv</footer>
+    <section class="fun">
+      <p>While I'm working on updating this page, check out
+        <a href="https://latent-spaces.github.io/brag/">brag</a> 👇</p>
+      <video src="assets/brag.mp4" controls autoplay muted loop playsinline></video>
+    </section>
+
+    <footer>© <span id="year"></span> Shunit Haviv Hakimi</footer>
   </main>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
