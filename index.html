@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shunit Haviv</title>
+  <meta name="description" content="Shunit Haviv — personal site and links." />
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #1c1917;
+      --muted: #78716c;
+      --accent: #4f46e5;
+      --card: #ffffff;
+      --border: #e7e5e4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --fg: #f5f5f4;
+        --muted: #a8a29e;
+        --accent: #a5b4fc;
+        --card: #1c1917;
+        --border: #292524;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    main {
+      width: 100%;
+      max-width: 32rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      color: var(--muted);
+      margin: 0 0 2.5rem;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    a.link {
+      display: block;
+      padding: 0.85rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--card);
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    a.link:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Shunit Haviv</h1>
+    <p class="tagline">Personal site — more coming soon.</p>
+
+    <nav class="links">
+      <a class="link" href="https://github.com/shunithaviv">GitHub</a>
+      <a class="link" href="https://www.linkedin.com/in/shunithaviv/">LinkedIn</a>
+      <a class="link" href="mailto:shunithaviv@gmail.com">Email</a>
+    </nav>
+
+    <footer>© <span id="year"></span> Shunit Haviv</footer>
+  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
