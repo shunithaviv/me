@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:CASL,CRSV,MONO,slnt,wght@0..1,0..1,0..1,-15..0,300..1000&amp;display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -35,9 +35,12 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      font-size: 17px;
+      font-family: "Recursive", system-ui, -apple-system, sans-serif;
+      font-size: 1.0625rem;
+      font-weight: 400;
+      font-variation-settings: "MONO" 0, "CASL" 0.15;
       line-height: 1.6;
+      font-kerning: normal;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -55,28 +58,32 @@
     main { flex: 1 0 auto; max-width: 48rem; }
 
     h1 {
-      font-family: "Fraunces", Georgia, serif;
-      font-weight: 600;
-      font-size: clamp(2.5rem, 7vw, 4.25rem);
-      line-height: 1.02;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-variation-settings: "MONO" 0, "CASL" 0;
+      font-size: clamp(2.55rem, 7vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
       margin: 0 0 1.4rem;
       color: oklch(30% 0.075 295);
+      text-wrap: balance;
     }
 
     .intro {
-      font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
       color: var(--muted);
+      max-width: 40ch;
       margin: 0 0 2.4rem;
-      text-wrap: pretty;
+      text-wrap: balance;
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-weight: 550;
+      font-variation-settings: "MONO" 1, "CASL" 0;
       font-size: 0.9rem;
+      letter-spacing: 0.01em;
     }
 
     .links a {
@@ -137,15 +144,6 @@
       flex: none;
     }
 
-    footer {
-      margin-top: clamp(3rem, 8vh, 5rem);
-      padding-top: 1.5rem;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      letter-spacing: 0.01em;
-    }
-
     a:focus-visible {
       outline: 2px solid var(--focus);
       outline-offset: 4px;
@@ -169,18 +167,10 @@
       </nav>
 
       <section class="meanwhile" aria-label="Meanwhile">
-        <p>Still building the real site. Here's something I made in the meantime: <a href="https://latent-spaces.github.io/brag/">brag</a>.</p>
+        <p>While I'm updating this page, check out <a href="https://latent-spaces.github.io/brag/">brag</a>.</p>
         <video src="assets/brag.mp4" autoplay muted loop playsinline aria-label="Looping clip of brag"></video>
       </section>
     </main>
-
-    <footer>
-      &copy; <span id="year"></span> Shunit Haviv Hakimi
-    </footer>
   </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
