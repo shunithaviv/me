@@ -2,123 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shunit Haviv Hakimi</title>
-  <meta name="description" content="Shunit Haviv Hakimi — personal site and links." />
+  <meta name="description" content="Shunit Haviv Hakimi, Applied Scientist excited about AI for audio and video, building new things." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shunit Haviv Hakimi" />
+  <meta property="og:description" content="Applied Scientist excited about AI for audio and video, building new things." />
+  <meta property="og:url" content="https://shunit.ai" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #fafaf9;
-      --fg: #1c1917;
-      --muted: #78716c;
-      --accent: #4f46e5;
-      --card: #ffffff;
-      --border: #e7e5e4;
+      --bg: oklch(98.5% 0.004 300);
+      --surface: oklch(99.4% 0.003 300);
+      --ink: oklch(26% 0.02 290);
+      --muted: oklch(48% 0.02 290);
+      --line: oklch(90% 0.012 300);
+      --accent: oklch(52% 0.16 295);
+      --accent-soft: oklch(52% 0.16 295 / 0.14);
+      --focus: oklch(52% 0.16 295 / 0.55);
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0c0a09;
-        --fg: #f5f5f4;
-        --muted: #a8a29e;
-        --accent: #a5b4fc;
-        --card: #1c1917;
-        --border: #292524;
-      }
-    }
+
     * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-size: 17px;
       line-height: 1.6;
-      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    main {
-      width: 100%;
-      max-width: 32rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(2rem, 6vw, 2.75rem);
-      margin: 0 0 0.5rem;
-      letter-spacing: -0.02em;
-    }
-    .tagline {
-      color: var(--muted);
-      margin: 0 0 2.5rem;
-    }
-    .links {
+
+    .page {
+      max-width: 60rem;
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: clamp(2rem, 8vh, 6rem) clamp(1.5rem, 6vw, 4rem);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
     }
-    a.link {
-      display: block;
-      padding: 0.85rem 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      background: var(--card);
-      color: var(--fg);
-      text-decoration: none;
-      font-weight: 500;
-      transition: border-color 0.15s ease, transform 0.15s ease;
+
+    main { flex: 1 0 auto; max-width: 48rem; }
+
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.5rem, 7vw, 4.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.4rem;
+      color: oklch(30% 0.075 295);
     }
-    a.link:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-    .fun {
-      margin-top: 2.5rem;
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      background: var(--card);
-    }
-    .fun p {
-      margin: 0 0 1rem;
+
+    .intro {
+      font-size: clamp(1.02rem, 1.5vw, 1.15rem);
       color: var(--muted);
-      font-size: 0.95rem;
+      margin: 0 0 2.4rem;
+      text-wrap: pretty;
     }
-    .fun a {
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      position: relative;
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 2px;
+    }
+    .links a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 1.5px;
+      background: var(--accent);
+      opacity: 0.4;
+      transition: opacity 0.28s ease-out;
+    }
+    .links a:hover { color: var(--accent); }
+    .links a:hover::after { opacity: 1; }
+
+    .meanwhile {
+      margin-top: clamp(3.5rem, 10vh, 6rem);
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    .meanwhile p {
+      margin: 0;
+      max-width: 26ch;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meanwhile a {
       color: var(--accent);
       font-weight: 500;
+      text-decoration: none;
+      background: linear-gradient(var(--accent), var(--accent)) left bottom / 100% 1.5px no-repeat;
+      padding-bottom: 1px;
+      transition: background-size 0.28s ease-out;
     }
-    .fun video {
+    .meanwhile a:hover {
+      background: linear-gradient(var(--accent-soft), var(--accent-soft)) left bottom / 100% 100% no-repeat;
+    }
+
+    .meanwhile video {
+      width: clamp(9rem, 30vw, 15rem);
+      height: clamp(9rem, 30vw, 15rem);
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid color-mix(in oklch, var(--accent) 22%, var(--line));
+      background: var(--surface);
       display: block;
-      width: 100%;
-      max-width: 22rem;
-      margin: 0 auto;
-      border-radius: 0.5rem;
+      flex: none;
     }
+
     footer {
-      margin-top: 2.5rem;
-      font-size: 0.8rem;
+      margin-top: clamp(3rem, 8vh, 5rem);
+      padding-top: 1.5rem;
       color: var(--muted);
+      font-size: 0.82rem;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      letter-spacing: 0.01em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Shunit Haviv Hakimi</h1>
-    <p class="tagline">Personal site — more coming soon.</p>
+  <div class="page">
+    <main>
+      <h1>Shunit Haviv Hakimi</h1>
+      <p class="intro">Applied Scientist, excited about AI for audio and video, building new things.</p>
 
-    <nav class="links">
-      <a class="link" href="https://github.com/shunithaviv">GitHub</a>
-      <a class="link" href="https://www.linkedin.com/in/shunit-haviv/">LinkedIn</a>
-    </nav>
+      <nav class="links" aria-label="Profiles">
+        <a href="https://github.com/shunithaviv">GitHub</a>
+        <a href="https://www.linkedin.com/in/shunit-haviv/">LinkedIn</a>
+      </nav>
 
-    <section class="fun">
-      <p>While I'm working on updating this page, check out
-        <a href="https://latent-spaces.github.io/brag/">brag</a> 👇</p>
-      <video src="assets/brag.mp4" controls autoplay muted loop playsinline></video>
-    </section>
+      <section class="meanwhile" aria-label="Meanwhile">
+        <p>Still building the real site. Here's something I made in the meantime: <a href="https://latent-spaces.github.io/brag/">brag</a>.</p>
+        <video src="assets/brag.mp4" autoplay muted loop playsinline aria-label="Looping clip of brag"></video>
+      </section>
+    </main>
 
-    <footer>© <span id="year"></span> Shunit Haviv Hakimi</footer>
-  </main>
+    <footer>
+      &copy; <span id="year"></span> Shunit Haviv Hakimi
+    </footer>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
